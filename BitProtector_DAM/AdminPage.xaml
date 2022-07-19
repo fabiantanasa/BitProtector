@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BitProtector_DAM.AdminPage"
+             BackgroundColor="#112B47"
+             Title="AdminPage">
+
+    <StackLayout Margin="20,35,20,20">
+        <Label 
+            Text="Adaugă un client"
+            TextColor="White"
+            FontSize="30"
+               ></Label>
+        <Entry x:Name="nameEntry"
+                Placeholder="Nume complet" 
+               PlaceholderColor="Gray"
+               TextColor="White"/>
+        <Entry x:Name="emailEntry"
+               Placeholder="E-mail" 
+               PlaceholderColor="Gray"
+               TextColor="White"/>
+        <Entry x:Name="numberEntry"
+               Placeholder="Număr de telefon" 
+               PlaceholderColor="Gray"
+               TextColor="White"/>
+        <Label Text="Abonat la newsletter"
+               TextColor="Gray"
+               FontSize="17"/>
+        <CheckBox x:Name="subscribed" Margin="10,0,0,0" Color="#77BB3F"/>
+        <Button Text="Adaugă în baza de date"
+                TextColor="white"
+                BackgroundColor="Transparent"
+                BorderColor="#77BB3F"
+                BorderWidth="1.5"
+                CornerRadius="50"
+                Clicked="OnButtonClicked" />
+        
+        
+        
+            <CollectionView x:Name="collectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                        <Label Text="{Binding Name}"
+                                    FontSize="Medium"
+                                    TextColor="White"/>
+                        <Label Text="{Binding Email}"
+                                    FontSize="Medium"
+                                    TextColor="White"/>
+                        <Label Text="{Binding Number}"
+                                    FontSize="Medium"
+                                    TextColor="White"/>
+                        <Label Text="{Binding Subscribed}"
+                                    TextColor="Silver"/>
+                        <Label Text=" "></Label>
+                    </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+    </StackLayout>
+</ContentPage>
